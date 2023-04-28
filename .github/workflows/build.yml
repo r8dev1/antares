@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-11, ubuntu-20.04, windows-latest]
+        os: [windows-latest]
 
     steps:
       - name: Check out Git repository
@@ -31,7 +31,7 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/*.AppImage,build/*.yml,build/*.deb,build/*.dmg,build/*.blockmap,build/*.zip,build/*.exe"
+          artifacts: "build/*.appx"
           allowUpdates: true
           draft: true
           generateReleaseNotes: true
